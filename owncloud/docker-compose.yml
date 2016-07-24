@@ -1,0 +1,27 @@
+version: "2"
+
+volumes:
+  config:
+  data:
+  mariadb:
+
+services:
+  owncloud:
+    build: .
+    volumes:
+      - config:/var/www/html/config
+      - data:/var/www/html/data
+    depends_on:
+      - mariadb
+    ports:
+      - 8000:80
+
+  mariadb:
+    image: mariadb
+    volumes:
+      - mariadb:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: owncloud
+      MYSQL_USER: owncloud
+      MYSQL_PASSWORD: secret
