@@ -31,7 +31,7 @@ RUN { \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 RUN a2enmod rewrite
 
-ENV OWNCLOUD_VERSION 9.1.0
+ENV OWNCLOUD_VERSION 9.1.1
 
 RUN curl -fsSL -o owncloud-${OWNCLOUD_VERSION}.tar.bz2 \
 		"https://download.owncloud.org/community/owncloud-${OWNCLOUD_VERSION}.tar.bz2" \
