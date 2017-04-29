@@ -19,7 +19,7 @@ RUN docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
 
 RUN a2enmod rewrite
 
-ENV NEXTCLOUD_VERSION 11.0.2
+ENV NEXTCLOUD_VERSION 11.0.3
 
 RUN curl -fsSL -o nextcloud-${NEXTCLOUD_VERSION}.tar.bz2 \
     "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2" \
